@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "proto/ext.proto";
+
+package test.example;
+
+message Request {
+    // request body
+    string msg = 1;
+}
+message Response {
+    // response body
+    string msg = 1;
+}
+
+
+service Service {
+    rpc SomeMethod (Request) returns (Response) {
+        option (roles) = "Admin";
+        option (addition) = "User";
+    }
+}
