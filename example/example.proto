@@ -16,7 +16,12 @@ message Response {
 
 service Service {
     rpc SomeMethod (Request) returns (Response) {
-        option (roles) = "Admin";
-        option (addition) = "User";
+        option (roles) = "Admin,User";
+    }
+    rpc SomeAnotherMethod (Request) returns (Response) {
+        option (roles) = "SuperAdmin";
+    }
+    rpc SomeDifferentMethod (Request) returns (Response) {
+        option (roles) = "User,Unknown";
     }
 }

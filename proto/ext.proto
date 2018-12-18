@@ -5,6 +5,5 @@ import "github.com/golang/protobuf/protoc-gen-go/descriptor/descriptor.proto";
 package test.example;
 
 extend google.protobuf.MethodOptions {
-    string roles = 1000;
-    string addition = 1001;
+    string roles = 4938;
 }
