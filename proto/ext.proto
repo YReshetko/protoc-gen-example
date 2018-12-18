@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/descriptor.proto";
 
-package test.example;
+package gen.roles;
 
 extend google.protobuf.MethodOptions {
     string roles = 4938;

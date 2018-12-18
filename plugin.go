@@ -3,11 +3,11 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"github.com/YReshetko/protoc-gen-roles/proto"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
 	plugin "github.com/golang/protobuf/protoc-gen-go/plugin"
 	"log"
-	"protoc-gen-example/proto"
 	"strings"
 )
 
@@ -74,7 +74,7 @@ func contains(arr []string, str string) bool {
 
 func extractRoles(options *descriptor.MethodOptions) string {
 	log.Printf("Option %+v\n", options)
-	roles, err := proto.GetExtension(options, test_example.E_Roles)
+	roles, err := proto.GetExtension(options, gen_roles.E_Roles)
 	if err != nil {
 		panic(err)
 	}
@@ -214,7 +214,7 @@ func generatedFileName(protoFile *descriptor.FileDescriptorProto) string {
 	if strings.HasSuffix(fileName, ".proto") {
 		fileName = fileName[:len(fileName)-len(".proto")]
 	}
-	outputFile := fileName + ".ex" + ".go"
+	outputFile := fileName + ".roles" + ".go"
 
 	return outputFile
 }

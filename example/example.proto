@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "proto/ext.proto";
+import "github.com/YReshetko/protoc-gen-roles/proto/ext.proto";
 
 package test.example;
 
@@ -16,12 +16,12 @@ message Response {
 
 service Service {
     rpc SomeMethod (Request) returns (Response) {
-        option (roles) = "Admin,User";
+        option (gen.roles.roles) = "Admin,User";
     }
     rpc SomeAnotherMethod (Request) returns (Response) {
-        option (roles) = "SuperAdmin";
+        option (gen.roles.roles) = "SuperAdmin";
     }
     rpc SomeDifferentMethod (Request) returns (Response) {
-        option (roles) = "User,Unknown";
+        option (gen.roles.roles) = "User,Unknown";
     }
 }
