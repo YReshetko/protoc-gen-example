@@ -2,6 +2,9 @@ syntax = "proto3";
 
 import "github.com/YReshetko/protoc-gen-roles/proto/ext.proto";
 
+
+option go_package = "example/pb;pb";
+
 package test.example;
 
 message Request {
@@ -23,5 +26,7 @@ service Service {
     }
     rpc SomeDifferentMethod (Request) returns (Response) {
         option (gen.roles.roles) = "User,Unknown";
+    }
+    rpc SomeMethodWithoutRoles (Request) returns (Response) {
     }
 }
