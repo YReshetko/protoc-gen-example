@@ -55,6 +55,7 @@ func processRequest(rq *plugin.CodeGeneratorRequest) *plugin.CodeGeneratorRespon
 
 		buff.header(packageName)
 
+		servicePackage := strings.Replace(*protoFile.Package, ".", "_", -1)
 		for _, serv := range protoFile.GetService() {
 			serviceName := serv.Name
 			//log.Println("Working with service: ", serviceName)
@@ -66,7 +67,7 @@ func processRequest(rq *plugin.CodeGeneratorRequest) *plugin.CodeGeneratorRespon
 					continue
 				}
 				roles := strings.Split(rolesLine, ",")
-				key := fmt.Sprintf(methodsPattern, packageName, *serviceName, *methodName)
+				key := fmt.Sprintf(methodsPattern, servicePackage, *serviceName, *methodName)
 				rolesMap[key] = roles
 				//log.Println("Get roles option:", roles)
 			}

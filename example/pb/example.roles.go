@@ -3,9 +3,9 @@ package pb
 
 
 var rolesMap = map[string][]string{	
-	"/pb.Service/SomeAnotherMethod": {"SuperAdmin"},	
-	"/pb.Service/SomeDifferentMethod": {"User", "Unknown"},	
-	"/pb.Service/SomeMethod": {"Admin", "User"},	
+	"/test_example.Service/SomeAnotherMethod": {"SuperAdmin"},	
+	"/test_example.Service/SomeDifferentMethod": {"User", "Unknown"},	
+	"/test_example.Service/SomeMethod": {"Admin", "User"},	
 }
 
 func CheckRole(method, role string)bool{
