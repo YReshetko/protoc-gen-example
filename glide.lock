@@ -1,8 +1,8 @@
-hash: c4b044101e3fde4883b4eea3325016a0a4bfa3ddccd9ee5d1888cefe007e4466
-updated: 2018-12-20T08:33:43.952323842+03:00
+hash: 24099ca25c5d19753650e847cbd5b24a9c124c587e9a3c440965c2b5ae477136
+updated: 2018-12-20T08:46:31.87623418+03:00
 imports:
 - name: github.com/golang/protobuf
-  version: aa810b61a9c79d51363740d207bb46cf8e620ed5
+  version: 1d3f30b51784bec5aad268e59fd3c2fc1c2fe73f
   subpackages:
   - proto
   - protoc-gen-go/descriptor
