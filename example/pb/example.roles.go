@@ -11,7 +11,8 @@ var rolesMap = map[string][]string{
 func CheckRole(method, role string)bool{
 	v, ok := rolesMap[method]	
 	if !ok {	
-		return false	
+		// If there is no method in the map then it's not protected		
+		return true	
 	}	
 	for _, roleToCheck := range v {	
 		if role == roleToCheck {		
